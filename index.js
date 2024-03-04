@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded",function() {
     }
     createSquares(16, 16);
 
+
     //Gets a random color for each square
     function getRandomColor() {
         const hex = ('0123456789ABCDEF');
@@ -20,6 +21,7 @@ document.addEventListener("DOMContentLoaded",function() {
         }
         return color;
     };
+
 
     //Changes color of each square if mouse click is down
     const randomColor = Math.floor(Math.random() * 16777215).toString(16);
@@ -35,6 +37,16 @@ document.addEventListener("DOMContentLoaded",function() {
                 const randomColor = getRandomColor();
                 this.style.backgroundColor = randomColor;
             }
+        });
+    });
+
+
+    const resetBtn = document.querySelector('.reset');
+    const changeGridBtn = document.querySelector('change-size');
+
+    resetBtn.addEventListener('click', function () {
+        squares.forEach(square => {
+            square.style.backgroundColor = '';
         });
     });
 
