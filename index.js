@@ -66,9 +66,11 @@ document.addEventListener("DOMContentLoaded",function() {
     changeGridBtn.addEventListener('click', function () {
         const gridSize = parseInt(prompt('Enter a number of up to 100 for a new grid (e.g., 100 for a 100x100 grid):'));
         
-        if (!isNaN(gridSize)) {
+        if (!isNaN(gridSize) && gridSize <= 100) {
             createSquares(gridSize * gridSize);
             draw();
+        } else {
+            alert('The number you entered was too high');
         }
     });
 
